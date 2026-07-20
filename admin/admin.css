@@ -1,0 +1,717 @@
+/*====================================================
+        SPORT STORE ADMIN PANEL
+        ADMIN.CSS
+====================================================*/
+
+/*=========================
+      RESET GENERAL
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#0f0f0f;
+    color:#fff;
+    display:flex;
+
+}
+
+/*=========================
+        SIDEBAR
+==========================*/
+
+.sidebar{
+
+    width:260px;
+    height:100vh;
+
+    background:#161616;
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    padding:30px 20px;
+
+    border-right:2px solid #00ff88;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:45px;
+
+}
+
+.logo i{
+
+    font-size:36px;
+    color:#00ff88;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+    font-weight:700;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin-bottom:12px;
+    border-radius:14px;
+    transition:.30s;
+
+}
+
+.sidebar li a{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-weight:500;
+
+}
+
+.sidebar li:hover{
+
+    background:#00ff88;
+
+}
+
+.sidebar li:hover a{
+
+    color:#000;
+
+}
+
+.sidebar i{
+
+    width:22px;
+    text-align:center;
+
+}
+
+/*=========================
+        CONTENIDO
+==========================*/
+
+.contenido{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:40px;
+
+}
+
+.tituloModulo{
+
+    font-size:34px;
+    margin-bottom:30px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.tituloModulo i{
+
+    color:#00ff88;
+
+}
+
+/*=========================
+    CONTENEDOR GENERAL
+==========================*/
+
+.contenedorProductos{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:35px;
+
+    align-items:flex-start;
+
+}
+
+/*=========================
+      FORMULARIO
+==========================*/
+
+.formulario{
+
+    background:#181818;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    border:1px solid #262626;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+
+}
+
+.formulario h2{
+
+    text-align:center;
+
+    color:#00ff88;
+
+    margin-bottom:25px;
+
+}
+
+.formulario label{
+
+    display:block;
+
+    margin-top:18px;
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#262626;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus{
+
+    border:2px solid #00ff88;
+
+}
+
+.formulario textarea{
+
+    resize:none;
+
+    min-height:120px;
+
+}
+
+
+/*====================================================
+        CUADRO PARA SUBIR IMAGEN
+====================================================*/
+
+.preview{
+
+    width:100%;
+    height:260px;
+
+    background:#202020;
+
+    border:3px dashed #00ff88;
+
+    border-radius:22px;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.preview:hover{
+
+    background:#282828;
+
+    border-color:white;
+
+}
+
+.preview img{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+border-radius:20px;
+
+opacity:0;
+
+transition:.3s;
+
+z-index:3;
+
+}
+
+.preview img.mostrar{
+
+    opacity:1;
+
+}
+
+.agregarImagen{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:2;
+
+transition:.3s;
+
+pointer-events:none;
+
+}
+
+.preview:hover .agregarImagen{
+
+    transform:translate(-50%,-50%) scale(1.08);
+
+}
+
+/*=========================
+        CIRCULO VERDE
+==========================*/
+
+.circuloMas{
+
+    width:105px;
+    height:105px;
+
+    border-radius:50%;
+
+    background:#00ff88;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+    0 0 20px rgba(0,255,136,.35),
+    0 0 40px rgba(0,255,136,.15);
+
+    transition:.35s;
+
+}
+
+.preview:hover .circuloMas{
+
+    transform:rotate(90deg);
+
+}
+
+.circuloMas i{
+
+    color:#000;
+
+    font-size:42px;
+
+}
+
+/*=========================
+        TEXTO
+==========================*/
+
+.textoImagen{
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    letter-spacing:.5px;
+
+}
+
+/*=========================
+        BOTÓN
+==========================*/
+
+.formulario button{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#00ff88;
+
+    color:#000;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.formulario button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 25px rgba(0,255,136,.35);
+
+}
+
+/*=========================
+        TALLAS
+==========================*/
+
+.tallas{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.tallas label{
+
+    margin:0;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:#262626;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.tallas label:hover{
+
+    background:#00ff88;
+
+    color:#000;
+
+}
+
+.tallas input{
+
+    width:auto;
+
+    margin-right:6px;
+
+}
+
+
+/*====================================================
+        PRODUCTOS REGISTRADOS
+====================================================*/
+
+.listaProductos{
+
+    width:100%;
+
+}
+
+.listaProductos h2{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    color:#00ff88;
+
+}
+
+/* GRID */
+
+.gridProductos{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+/* TARJETA */
+
+/* ==============================
+   TARJETAS DE PRODUCTOS
+============================== */
+
+
+.producto{
+
+background:#181818;
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid #262626;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+
+
+.producto:hover{
+
+transform:translateY(-8px);
+
+border-color:#00ff88;
+
+box-shadow:0 15px 35px rgba(0,255,136,.25);
+
+}
+
+
+
+.producto img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+background:#222;
+
+}
+
+
+
+.producto h3{
+
+font-size:20px;
+
+padding:18px 18px 5px;
+
+}
+
+
+
+.producto h4{
+
+padding:0 18px;
+
+font-size:22px;
+
+color:#00ff88;
+
+margin-bottom:15px;
+
+}
+
+
+
+.producto p{
+
+padding:5px 18px;
+
+color:#ccc;
+
+font-size:14px;
+
+}
+
+
+
+.producto strong{
+
+color:white;
+
+}
+
+
+
+.acciones{
+
+display:flex;
+
+gap:15px;
+
+padding:20px;
+
+}
+
+
+
+.acciones a{
+
+flex:1;
+
+text-align:center;
+
+padding:12px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.acciones a:first-child{
+
+background:#00ff88;
+
+color:#000;
+
+}
+
+
+
+.acciones a:last-child{
+
+background:#ff3c3c;
+
+color:white;
+
+}
+
+
+
+.acciones a:hover{
+
+transform:scale(1.05);
+
+}
+
+.disponible{
+
+    background:#00b894;
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.ultimas{
+
+    background:#f39c12;
+
+    color:#000;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.agotado{
+
+    background:#e74c3c;
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
